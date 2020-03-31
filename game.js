@@ -34,9 +34,11 @@ var buttonColours = ["red", "blue","green","yellow"];
 
 
 
-//mobile friendly test.
-if(input === 1)
+/** MOBILE USER**/
+
+if(input == 1)
 {
+
   if (!hasStarted) {
     $("#level-title").text("Level " + level);
     nextSequence();
@@ -49,39 +51,36 @@ $("div[type = button]").click(btnHandler);
 
 
 }
+else
+{
+  $("#level-title").html("INVALID INPUT<br/>Enter 1 for Mobile User<br/>Press Any key for Web User");
+  /**WEB USER**/
+  //detect keyboard pressed for large screens
+  $(document).keypress(function(){
+   //first call
+   if (!hasStarted) {
+     $("#level-title").text("Level " + level);
+     nextSequence();
+     hasStarted = true;
+   }
+    /*triggered++;
 
+      if((!hasStarted) && (triggered == 1))
+        {
+          nextSequence();
 
-//detect keyboard pressed for large screens
-// $(document).keypress(function(){
-//  //first call
-//  if (!hasStarted) {
-//    $("#level-title").text("Level " + level);
-//    nextSequence();
-//    hasStarted = true;
-//  }
-//   /*triggered++;
-//
-//     if((!hasStarted) && (triggered == 1))
-//       {
-//         nextSequence();
-//
-//         //console.log(triggered); //debug trigger
-//       }
-//       else
-//     {
-//       hasStarted = false;
-//       nextSequence();
-//         //$("h1").html("Game Over, Press A Key to Start ");
-//
-//     }*/
-//
-//
-// });
+          //console.log(triggered); //debug trigger
+        }
+        else
+      {
+        hasStarted = false;
+        nextSequence();
+          //$("h1").html("Game Over, Press A Key to Start ");
 
-  //detect button click
-  //$("div[type = button]").click(btnHandler);
-
-//$("div[type = button]").click(btnHandler);
+      }*/
+  });//detect button click
+  $("div[type = button]").click(btnHandler);
+}
 
 
 
@@ -154,7 +153,31 @@ function checkAnswer(currentLevel){
     }
     else{
       playSound("wrong");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+
+      //mobile user option
+      console.log("input in else- > " + input);
+      console.log("typeof input " + typeof input);
+
+      // console.log("input == 1 -> " + (input == 1));
+      // var status = (input == 1) ? "true": "false";
+      // console.log("status -> " + status);
+
+
+      //display message for selected user(mobile or web)
+      switch(input)
+      {
+        //console.log("debug")
+        case "1":
+        $("#level-title").text("Game Over, Refresh Page to Restart");
+         break;
+
+        default:
+        $("#level-title").html("Game Over, Refresh Page to Restart for Mobile User.<br/>Press Any Key for Web User");
+
+
+      }
+
+
       applyWrong();
       setTimeout(removeWrong,200); // remove wrong option class
 
@@ -177,7 +200,7 @@ function startOver(){
   gamePattern = [];
   level = 0;
   hasStarted = false;
-  input = 0;
+  //input = 0;
 //  limit = 0;
   //$("h1").html("Game Over, Press A Key to Start ");
 
