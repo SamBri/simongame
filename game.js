@@ -3,7 +3,9 @@ alert("working...");
 console.log($("h1"));
 */
 
-prompt();
+//prompt for mobile user
+var input = prompt("Mobile User\n Enter 1 or Cancel");
+
 //array of game pattern
 var gamePattern = [];
 var limit  = 4;
@@ -34,7 +36,7 @@ var buttonColours = ["red", "blue","green","yellow"];
 
 
 
-//detect keyboard pressed
+//detect keyboard pressed for large screens
 $(document).keypress(function(){
  //first call
  if (!hasStarted) {
@@ -61,8 +63,20 @@ $(document).keypress(function(){
 
 });
 
-//detect button click
-$("div[type = button]").click(btnHandler);
+//for mobile user
+if(input === 1)
+{
+
+  if (!hasStarted) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    hasStarted = true;
+  }
+}else{
+  //detect button click
+  $("div[type = button]").click(btnHandler);
+}
+//$("div[type = button]").click(btnHandler);
 
 
 
