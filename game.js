@@ -3,6 +3,7 @@ alert("working...");
 console.log($("h1"));
 */
 
+prompt();
 //array of game pattern
 var gamePattern = [];
 var limit  = 4;
