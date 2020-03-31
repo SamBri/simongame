@@ -34,48 +34,53 @@ var buttonColours = ["red", "blue","green","yellow"];
 
 
 
-
-
-//detect keyboard pressed for large screens
-$(document).keypress(function(){
- //first call
- if (!hasStarted) {
-   $("#level-title").text("Level " + level);
-   nextSequence();
-   hasStarted = true;
- }
-  /*triggered++;
-
-    if((!hasStarted) && (triggered == 1))
-      {
-        nextSequence();
-
-        //console.log(triggered); //debug trigger
-      }
-      else
-    {
-      hasStarted = false;
-      nextSequence();
-        //$("h1").html("Game Over, Press A Key to Start ");
-
-    }*/
-
-
-});
-
-//for mobile user
+//mobile friendly test.
 if(input === 1)
 {
-
   if (!hasStarted) {
     $("#level-title").text("Level " + level);
     nextSequence();
     hasStarted = true;
-  }
-}else{
-  //detect button click
-  $("div[type = button]").click(btnHandler);
+// $("div[type = button]").click(btnHandler);
+
 }
+
+$("div[type = button]").click(btnHandler);
+
+
+}
+
+
+//detect keyboard pressed for large screens
+// $(document).keypress(function(){
+//  //first call
+//  if (!hasStarted) {
+//    $("#level-title").text("Level " + level);
+//    nextSequence();
+//    hasStarted = true;
+//  }
+//   /*triggered++;
+//
+//     if((!hasStarted) && (triggered == 1))
+//       {
+//         nextSequence();
+//
+//         //console.log(triggered); //debug trigger
+//       }
+//       else
+//     {
+//       hasStarted = false;
+//       nextSequence();
+//         //$("h1").html("Game Over, Press A Key to Start ");
+//
+//     }*/
+//
+//
+// });
+
+  //detect button click
+  //$("div[type = button]").click(btnHandler);
+
 //$("div[type = button]").click(btnHandler);
 
 
@@ -172,6 +177,7 @@ function startOver(){
   gamePattern = [];
   level = 0;
   hasStarted = false;
+  input = 0;
 //  limit = 0;
   //$("h1").html("Game Over, Press A Key to Start ");
 
