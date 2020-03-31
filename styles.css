@@ -35,7 +35,7 @@ footer{
   display: block;
   width: 70%;
   margin: auto;
-  background-color: #f0f0ef;
+  background-color: pink;
    }
  }
 
@@ -45,7 +45,7 @@ footer{
 display: block;
 width: 70%;
 margin: auto;
-background-color: #f0f0ef;
+background-color: orange;
  }
 }
 
@@ -55,7 +55,7 @@ background-color: #f0f0ef;
   display: block;
   width: 70%;
   margin: auto;
-  background-color: #f0f0ef;
+  background-color: black;
    }
 
  }
@@ -66,7 +66,7 @@ background-color: #f0f0ef;
   display: block;
   width: 70%;
   margin: auto;
-  background-color: #f0f0ef;
+  background-color: white;
    }
 
 }
