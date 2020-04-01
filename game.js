@@ -122,9 +122,9 @@ function checkAnswer(currentLevel){
 
   if(userClickedPattern[currentLevel] === gamePattern[currentLevel])
   {
-     console.log("success");
+     /*console.log("success");
 
-     console.log("length of gamePattern-> "+gamePattern.length);
+     console.log("length of gamePattern-> "+gamePattern.length);*/
 
      if(gamePattern.length === userClickedPattern.length )
     {
@@ -155,8 +155,10 @@ function checkAnswer(currentLevel){
       playSound("wrong");
 
       //mobile user option
+      /*
       console.log("input in else- > " + input);
       console.log("typeof input " + typeof input);
+      */
 
       // console.log("input == 1 -> " + (input == 1));
       // var status = (input == 1) ? "true": "false";
@@ -241,8 +243,8 @@ userClickedPattern.push(userChosenColour);
 
 
 //debug clicked patterns
-console.log("UserClicked");
-console.log(userClickedPattern);
+/*console.log("UserClicked");
+console.log(userClickedPattern);*/
 
  playSound(userChosenColour);
  animateFlash(userChosenColour);
