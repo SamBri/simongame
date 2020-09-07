@@ -1,3 +1,3 @@
 # simongame
-Simon Game:<br/>
+Simon Game  
 Remember all color patterns in the right sequence to win.
